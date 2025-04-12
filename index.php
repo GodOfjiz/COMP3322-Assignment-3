@@ -1,14 +1,17 @@
 <?php
 require_once 'login.php';
 
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
 $conn = db_connect();
 
 // Handle login form submission
 if (isset($_POST['login'])) {
     if (authenticate($_POST['username'], $_POST['password'])) {
         $_SESSION['username'] = $_POST['username'];
-        // Instead of last_activity, store a fixed login time that will not be updated
-        $_SESSION['login_time'] = time();
+        $_SESSION['login_time'] = time(); // Set login_time here
         header('Location: index.php');
         exit;
     }
@@ -25,7 +28,7 @@ if (!check_session()) {
 }
 
 // Display music content
-display_secured_content(isset($_GET['search']) ? $_GET['search'] : null);
+display_secured_content(isSet($_GET['search']) ? $_GET['search'] : null);
 
 
 // Function for login error message

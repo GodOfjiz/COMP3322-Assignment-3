@@ -1,8 +1,8 @@
 <?php
 // Session configuration
-define("SessionTime", 7);
+define("SessionTime", 4);
 ini_set('session.gc_maxlifetime', SessionTime);
-session_set_cookie_params(SessionTime);
+session_set_cookie_params(0);
 
 // Start session
 session_start();
@@ -28,12 +28,13 @@ function check_session() {
     if (!isset($_SESSION['username'])) {
         return false;
     }
-    // Check session timeout
+    
     if (time() - $_SESSION['login_time'] >= SessionTime) {
-        $_SESSION['timeout_occurred'] = true;
+        // Set error message without destroying the entire session
         $_SESSION['error'] = 'Session expired!!';
-        session_write_close(); 
-        
+        // Unset only the authentication variables
+        unset($_SESSION['username']);
+        unset($_SESSION['login_time']);
         return false;
     }
     
