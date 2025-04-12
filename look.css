@@ -1,0 +1,271 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #add8e6; 
+    border-radius: 15px; 
+}
+
+/* Login Page */
+.login-page main {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.login-page .form-group {
+    margin-bottom: 15px;
+}
+
+.login-page label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.login-page input[type="text"],
+.login-page input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.login-page button {
+    width: 100%;
+    padding: 10px;
+    background-color: #2e49dd;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.login-page button:hover {
+    background-color: #5368dd;
+}
+
+.login-page h2{
+    margin-top: -1px;
+    margin-bottom: 15px;
+}
+
+/* Error styles */
+.error-message {
+    color: #ff0000;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #ffeeee;
+    border: 1px solid #ffdddd;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.error-no-user {
+    border-left: 4px solid #ff6b6b;
+}
+
+.error-wrong-password {
+    border-left: 4px solid #ffa502;
+}
+
+.error-session-expired {
+    border-left: 4px solid #2d3436;
+    background-color: #dfe6e9;
+}
+
+.field-alert {
+    position: absolute;
+    background-color: #ffebee;
+    color: #d32f2f;
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: 1px solid #ef9a9a;
+    margin-top: 5px;
+    font-size: 0.9em;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    z-index: 10;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+/* Music Page Styles */
+/* Music Page Search Bar */
+.music-page .search-container h1 {
+    margin: 0 0 15px 0;
+    font-size: 2.5em;
+    width: 100%;
+}
+
+.music-page #searchInput {
+    padding: 5px;
+    width: 89%;
+    border-radius: 10px;
+    font-size: 1em;
+    outline: none;
+}
+
+.music-page #searchInput:focus {
+    border-color: #2e49dd;
+    box-shadow: 0 0 8px rgba(46, 73, 221, 0.2);
+}
+
+.music-page .genre-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.music-page .genre-buttons button {
+    flex: 1;
+    padding: 10px;
+    background-color: #787b8a;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.music-page .genre-buttons button:hover {
+    background-color: #535561;
+    transform: translateY(-2px);
+}
+
+/* Music Page Music List */
+.music-page .music-container h2{
+    font-size: 2em;
+}
+
+.music-page .music-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Increased gap between items */
+    margin-top: 20px;
+    width: 100%;
+}
+
+.music-page .music-item {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px; /* Increased padding */
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: all 0.2s ease;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.music-page .play-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 0 15px 0 0;
+    color: #2e49dd;
+    transition: transform 0.2s;
+    flex-shrink: 0;
+}
+
+.music-page .play-btn:hover {
+    color: #5368dd;
+    transform: scale(1.1);
+}
+
+.music-page .music-info {
+    flex: 1;
+    min-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.music-page .title {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 3px;
+    color: #333;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.music-page .artist {
+    color: #666;
+    font-size: 0.9em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.music-page .duration {
+    width: 80px;
+    text-align: center;
+    color: #666;
+    height: 20px;
+}
+
+.music-page .license-icon {
+    width: 34px;
+    margin: 0 20px;
+    opacity: 0.7;
+  
+    height: 20px;
+}
+.music-page .play-count {
+    width: 80px;
+    text-align: center;
+    color: #666;
+    height: 20px;
+}
+
+.music-page .tags {
+    flex: 1;
+    font-size: 1em;
+    color: #888;
+    padding-left: 20px;
+}
+
+.music-item.playing {
+    background-color: #e8f5e9; /* Light green background */
+    border-left: 4px solid #2e7d32; /* Dark green accent border */
+    box-shadow: 0 2px 8px rgba(46, 125, 50, 0.2);
+}
+
+/* Paused tracks */
+.music-item.paused {
+    background-color: #fff8e1; /* Light amber background */
+    border-left: 4px solid #ff8f00; /* Amber accent border */
+}
+
+/* Play button states */
+.play-btn.playing img {
+    content: url('pause.png');
+}
+
+.play-btn:not(.playing) img {
+    content: url('play.png');
+}
+
+/* Animation for smooth transitions */
+.music-item {
+    transition: all 0.3s ease;
+}
+
