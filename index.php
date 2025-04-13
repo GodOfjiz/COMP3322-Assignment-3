@@ -1,10 +1,6 @@
 <?php
 require_once 'login.php';
 
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
-
 $conn = db_connect();
 
 // Handle login form submission
@@ -33,14 +29,6 @@ display_secured_content(isSet($_GET['search']) ? $_GET['search'] : null);
 
 // Function for login error message
 function display_login_form($msg = '') {
-    $error_class = '';
-    if ($msg === 'No such user!') {
-        $error_class = 'error-no-user';
-    } elseif ($msg === 'Incorrect password!') {
-        $error_class = 'error-wrong-password';
-    } elseif ($msg === 'Session expired!!') {
-        $error_class = 'error-session-expired';
-    }
 ?>
 <!DOCTYPE html>
 <html lang="en">

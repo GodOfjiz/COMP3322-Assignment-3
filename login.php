@@ -30,8 +30,7 @@ function check_session() {
     }
     
     if (time() - $_SESSION['login_time'] >= SessionTime) {
-        // Set error message without destroying the entire session
-        $_SESSION['error'] = 'Session expired!!';
+        $_SESSION['error'] = 'Session expired';
         // Unset only the authentication variables
         unset($_SESSION['username']);
         unset($_SESSION['login_time']);
