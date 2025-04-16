@@ -14,18 +14,8 @@ $musicId = mysqli_real_escape_string($conn, $_GET['musid']);
 $query = "SELECT Filename FROM Music WHERE _id = '$musicId'";
 $result = mysqli_query($conn, $query);
 
-if (!$result || mysqli_num_rows($result) == 0) {
-    header("Location: index.php?error=music_not_found");
-    exit;
-}
-
 $music = mysqli_fetch_assoc($result);
 $filePath = './Music/' . $music['Filename'];
-
-if (!file_exists($filePath)) {
-    header("Location: index.php?error=file_not_found");
-    exit;
-}
 
 // Update play count
 $updateQuery = "UPDATE Music SET Pcount = Pcount + 1 WHERE _id = '$musicId'";

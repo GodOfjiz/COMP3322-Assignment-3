@@ -1,6 +1,6 @@
 <?php
 // Session configuration
-define("SessionTime", 4);
+define("SessionTime", 300);
 ini_set('session.gc_maxlifetime', SessionTime);
 session_set_cookie_params(0);
 
@@ -70,7 +70,7 @@ function handle_unauthorized() {
         exit;
     } else {
         header("HTTP/1.1 401 Unauthorized");
-        exit("Unauthorized access");
+        exit;
     }
 }
 ?>
